@@ -207,7 +207,7 @@ Status ControlComponent::ProduceControlCommand(
     estop_reason_ = "estop for empty planning trajectory, planning headers: " +
                     local_view_.trajectory().header().ShortDebugString();
   }
-
+//negative:负
   if (FLAGS_enable_gear_drive_negative_speed_protection) {
     const double kEpsilon = 0.001;
     auto first_trajectory_point = local_view_.trajectory().trajectory_point(0);
@@ -223,7 +223,7 @@ Status ControlComponent::ProduceControlCommand(
       controller_agent_.Reset();
       AINFO_EVERY(100) << "Reset Controllers in Manual Mode";
     }
-
+//mutable proto创建数组？
     auto debug = control_command->mutable_debug()->mutable_input_debug();
     debug->mutable_localization_header()->CopyFrom(
         local_view_.localization().header());
@@ -311,7 +311,7 @@ bool ControlComponent::Proc() {
   }
 
   {
-    // TODO(SHU): to avoid redundent copy
+    // TODO(SHU): to avoid redundent（多余） copy
     std::lock_guard<std::mutex> lock(mutex_);
     local_view_.mutable_chassis()->CopyFrom(latest_chassis_);
     local_view_.mutable_trajectory()->CopyFrom(latest_trajectory_);

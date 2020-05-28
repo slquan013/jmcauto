@@ -376,6 +376,8 @@ Status LatController::ComputeControlCommand(
 
   // Transform the coordinate of the planning trajectory from the center of the
   // rear-axis to the center of mass, if conditions matched
+  //trajectory_transform_to_com_reverse=true
+  //trajectory_transform_to_com_drive=true
   if (((FLAGS_trajectory_transform_to_com_reverse &&
         vehicle_state->gear() == canbus::Chassis::GEAR_REVERSE) ||
        (FLAGS_trajectory_transform_to_com_drive &&
