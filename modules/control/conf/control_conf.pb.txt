@@ -42,9 +42,9 @@ lat_controller_conf {
   matrix_q: 0.0
   matrix_q: 0.0
   matrix_q: 0.0
+  reverse_matrix_q: 0.05
   reverse_matrix_q: 0.0
-  reverse_matrix_q: 0.0
-  reverse_matrix_q: 0.0
+  reverse_matrix_q: 1.0
   reverse_matrix_q: 0.0
   cutoff_freq: 10
   mean_filter_window_size: 10
