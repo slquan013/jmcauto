@@ -733,12 +733,12 @@ double LatController::ComputeFeedForward(double ref_curvature) const {
   double steer_angle_feedforwardterm;
   if (VehicleStateProvider::Instance()->gear() ==
       canbus::Chassis::GEAR_REVERSE) {
-    steer_angle_feedforwardterm = wheelbase_ * ref_curvature * 180 / M_PI *
+    steer_angle_feedforwardterm = 0 * wheelbase_ * ref_curvature * 180 / M_PI *
                                   steer_ratio_ /
                                   steer_single_direction_max_degree_ * 100;
   } else {
     steer_angle_feedforwardterm =
-        (wheelbase_ * ref_curvature + kv * v * v * ref_curvature -
+        0 * (wheelbase_ * ref_curvature + kv * v * v * ref_curvature -
          matrix_k_(0, 2) *
              (lr_ * ref_curvature -
               lf_ * mass_ * v * v * ref_curvature / 2 / cr_ / wheelbase_)) *
