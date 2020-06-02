@@ -38,13 +38,13 @@ lat_controller_conf {
   mass_rl: 65
   mass_rr: 65
   eps: 0.01
+  matrix_q: 0.000001
   matrix_q: 0.0
+  matrix_q: 0.000001
   matrix_q: 0.0
-  matrix_q: 0.0
-  matrix_q: 0.0
-  reverse_matrix_q: 0.05
+  reverse_matrix_q: 0.000001
   reverse_matrix_q: 0.0
-  reverse_matrix_q: 1.0
+  reverse_matrix_q: 0.000001
   reverse_matrix_q: 0.0
   cutoff_freq: 10
   mean_filter_window_size: 10
